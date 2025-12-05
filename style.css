@@ -1,0 +1,168 @@
+/* Variables for easy theming */
+:root {
+  --primary-color: #4f46e5; /* Modern Indigo */
+  --primary-hover: #4338ca;
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-color);
+  padding: 40px 20px;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: auto;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1.faq-title {
+  margin-bottom: 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Tabs Styling - Pill Shape */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  padding: 10px 24px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.tabs button:hover {
+  background: #f9fafb;
+  color: var(--text-main);
+}
+
+.tabs button[aria-selected="true"] {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Panels */
+.tab-panel {
+  display: block;
+  animation: fadeEffect 0.4s ease;
+}
+
+.tab-panel[aria-hidden="true"] {
+  display: none;
+}
+
+/* Animation for tab switching */
+@keyframes fadeEffect {
+  from {opacity: 0; transform: translateY(5px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Accordions Styling */
+.accordion {
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.accordion:hover {
+  border-color: #d1d5db;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 16px 20px;
+  background: white;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between; /* Pushes arrow to right */
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.accordion-header:hover {
+  background: #f9fafb;
+}
+
+/* The Arrow Icon */
+.icon {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate icon when open */
+.accordion-header[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
+  stroke: var(--primary-color);
+}
+
+.accordion-header[aria-expanded="true"] {
+  color: var(--primary-color);
+}
+
+/* Accordion Content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+}
+
+/* Inner wrapper for padding to avoid animation jump */
+.content-inner {
+  padding: 0 20px 20px 20px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}

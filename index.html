@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <section class="faq-container">
+    <div class="faq-header">
+      <h1 class="faq-title">Frequently Asked Questions</h1>
+      <p class="description">Have questions? We're here to help.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-target="general">General</button>
+      <button role="tab" aria-selected="false" data-target="billing">Billing</button>
+      <button role="tab" aria-selected="false" data-target="technical">Technical</button>
+    </div>
+
+    <div id="general" class="tab-panel" role="tabpanel">
+      <div class="accordion">
+        <button class="accordion-header" aria-expanded="true">
+          <span>What is this website about?</span>
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="accordion-content open">
+          <div class="content-inner">
+            <p>This is a sample FAQ page created using HTML, CSS, and JavaScript. It features a modern design with smooth animations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="accordion-header" aria-expanded="false">
+          <span>How does the FAQ work?</span>
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <div class="content-inner">
+            <p>Click the accordion headers to open or close answers. The tabs allow you to filter questions by category.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="billing" class="tab-panel" role="tabpanel" aria-hidden="true">
+      <div class="accordion">
+        <button class="accordion-header" aria-expanded="false">
+          <span>How do I request a refund?</span>
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <div class="content-inner">
+            <p>You can request a refund via your profile’s billing section within 30 days of purchase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="technical" class="tab-panel" role="tabpanel" aria-hidden="true">
+      <div class="accordion">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Why is the page not loading?</span>
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <div class="content-inner">
+            <p>Try clearing your browser cache and reloading the page. If the issue persists, contact support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
